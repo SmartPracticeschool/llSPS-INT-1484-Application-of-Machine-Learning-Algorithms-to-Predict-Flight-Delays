@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Flight Delay Prediction System</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Flight Delay Prediction System</h1>
+            <form action = "{{ url_for('login')}}" method="post">
+                <input type="text" class="form-control" name="month" placeholder="Enter month" required="required"/>
+                <input type="text" class="form-control" name="day" placeholder="Enter day" required="required"/>
+                <input type="text" class="form-control"name="dep_delay" placeholder="Enter Departure Delay" required="required"/>
+                <input type="text" class="form-control" name="distance" placeholder="Enter Distance" required="required"/>
+                <input type="text" class="form-control"name="diverted" placeholder="Enter diverted" required="required"/>
+                <input type="text" class="form-control" name="cancelled" placeholder="Enter cancellation status" required="required"/>
+                <input type="text" class="form-control" name="air_sys_delay" placeholder="Enter Air System Delay" required="required"/>
+                <input type="text" class="form-control" name="security_delay" placeholder="Enter security delay" required="required"/>
+                <input type="text" class="form-control" name="airline_delay" placeholder="Enter Airline Delay" required="required"/>
+                <input type="text" class="form-control" name="late_aircraft_delay" placeholder="Enter Late Aircraft Delay" required="required"/>
+                <input type="text" class="form-control" name="weather_delay" placeholder="Enter Weather Delay" required="required"/>
+                <input type="text" class="form-control" name="route" placeholder="Enter Route" required="required"/>
+                <button type="submit" class=" btn btn-primary btn-block btn-large">Predict</button>
+
+            </form>
+            <br>
+            <br>
+            {{showcase}}
+
+        </div>
+    </body>
+</html>
