@@ -12,18 +12,24 @@ def home():
 def login():
     MONTH = request.form['month']
     DAY = request.form['day']
+    SCHEDULED_DEPARTURE = request.form['scheduled_dep']
     DEPARTURE_DELAY = request.form['dep_delay']
-    DISTANCE = request.form['distance']
+    SCHEDULED_ARRIVAL = request.form['scheduled_arrival']
     DIVERTED = request.form['diverted']
-    CANCELLED = request.form['cancelled']
-    AIR_SYSTEM_DELAY= request.form['air_sys_delay']
-    SECURITY_DELAY= request.form['security_delay']
-    AIRLINE_DELAY = request.form['airline_delay']
-    LATE_AIRCRAFT_DELAY = request.form['late_aircraft_delay']
-    WEATHER_DELAY = request.form['weather_delay']
+    CANCELLED = request.form['cancelled']    
+    AIR_SYSTEM_DELAY= 14.009280092800928 #mean
+    SECURITY_DELAY= 0.024510245102451023 #mean   
+    AIRLINE_DELAY = 17.295672956729568 #mean
+    LATE_AIRCRAFT_DELAY = 26.005040050400503 #mean
+    WEATHER_DELAY = 2.2603726037260374 #mean
+    # AIR_SYSTEM_DELAY= request.form['air_sys_delay']
+    # SECURITY_DELAY= request.form['security_delay']
+    # AIRLINE_DELAY = request.form['airline_delay']
+    # LATE_AIRCRAFT_DELAY = request.form['late_aircraft_delay']
+    # WEATHER_DELAY = request.form['weather_delay']
     route= request.form['route']
 
-    total = [[int(MONTH), int(DAY), int(DEPARTURE_DELAY),int(DISTANCE), int(DIVERTED), int(CANCELLED),int(AIR_SYSTEM_DELAY), int(SECURITY_DELAY), int(AIRLINE_DELAY), int(LATE_AIRCRAFT_DELAY), int(WEATHER_DELAY), int(route)]]
+    total = [[int(MONTH), int(DAY),int(SCHEDULED_DEPARTURE), int(DEPARTURE_DELAY),int(SCHEDULED_ARRIVAL), int(DIVERTED), int(CANCELLED),int(AIR_SYSTEM_DELAY), int(SECURITY_DELAY), int(AIRLINE_DELAY), int(LATE_AIRCRAFT_DELAY), int(WEATHER_DELAY), int(route)]]
     y_pred = model.predict(total)
     if y_pred==1:
         msg='Your flight will be delayed'

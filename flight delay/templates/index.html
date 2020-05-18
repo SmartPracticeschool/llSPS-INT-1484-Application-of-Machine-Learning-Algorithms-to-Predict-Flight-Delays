@@ -18,15 +18,32 @@
             <form action = "{{ url_for('login')}}" method="post">
                 <input type="text" class="form-control" name="month" placeholder="Enter month" required="required"/>
                 <input type="text" class="form-control" name="day" placeholder="Enter day" required="required"/>
+                <input type="text" class="form-control" name="scheduled_dep" placeholder="Enter scheduled departure" required="required"/>
+                <input type="text" class="form-control" name="scheduled_arrival" placeholder="Enter scheduled arrival" required="required"/>
+                
+                
                 <input type="text" class="form-control"name="dep_delay" placeholder="Enter Departure Delay" required="required"/>
-                <input type="text" class="form-control" name="distance" placeholder="Enter Distance" required="required"/>
-                <input type="text" class="form-control"name="diverted" placeholder="Enter diverted" required="required"/>
-                <input type="text" class="form-control" name="cancelled" placeholder="Enter cancellation status" required="required"/>
-                <input type="text" class="form-control" name="air_sys_delay" placeholder="Enter Air System Delay" required="required"/>
+                <!-- <input type="text" class="form-control" name="distance" placeholder="Enter Distance" required="required"/> -->
+                <!-- <input type="text" class="form-control"name="diverted" placeholder="Enter diverted" required="required"/> -->
+                
+                <label>Enter Flight Divertion Status:</label>
+                  <select class="form-control" name="diverted">
+                    <option value="1">Diverted</option>
+                    <option value="0">Not Diverted</option>
+                </select>
+                <br>
+                <!-- <input type="text" class="form-control" name="cancelled" placeholder="Enter cancellation status" required="required"/> -->
+                <label>Enter Flight Ccancellation Status:</label>
+                  <select class="form-control" name="cancelled">
+                    <option value="1">Cancelled</option>
+                    <option value="0">Not Cancelled</option>
+                </select>
+                <br>
+                <!-- <input type="text" class="form-control" name="air_sys_delay" placeholder="Enter Air System Delay" required="required"/>
                 <input type="text" class="form-control" name="security_delay" placeholder="Enter security delay" required="required"/>
                 <input type="text" class="form-control" name="airline_delay" placeholder="Enter Airline Delay" required="required"/>
                 <input type="text" class="form-control" name="late_aircraft_delay" placeholder="Enter Late Aircraft Delay" required="required"/>
-                <input type="text" class="form-control" name="weather_delay" placeholder="Enter Weather Delay" required="required"/>
+                <input type="text" class="form-control" name="weather_delay" placeholder="Enter Weather Delay" required="required"/> -->
                 <input type="text" class="form-control" name="route" placeholder="Enter Route" required="required"/>
                 <button type="submit" class=" btn btn-primary btn-block btn-large">Predict</button>
 
